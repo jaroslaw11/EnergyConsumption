@@ -33,7 +33,7 @@ jobs:
         run: |
           cd build
           # Replace 'MyApp' with your actual target name
-          make MyApp
+          make EnergyConsumption
           # Create the .app bundle directory structure
           mkdir -p MyApp.app/Contents/MacOS
           cp MyApp MyApp.app/Contents/MacOS/
