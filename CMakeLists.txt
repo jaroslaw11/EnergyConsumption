@@ -9,3 +9,5 @@ project ("EnergyConsumption")
 add_executable (EnergyConsumption "EnergyConsumption.cpp" "EnergyConsumption.h" "forecast.hpp" "forecast.cpp")
 
 # TODO: Добавьте тесты и целевые объекты, если это необходимо.
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED True)
