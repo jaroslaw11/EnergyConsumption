@@ -26,7 +26,7 @@ bool loadData(const std::string& filePath, EnergyForecaster& forecaster) {
             std::cerr << "Failed to parse line: " << line << std::endl;
             continue; // skip malformed lines
         }
-        Observation obs{ temp, time, day, consumption };
+        Observation obs(temp, time, day, consumption);
         forecaster.addObservation(obs);
         //forecaster.addObservation({ temp, time, day, consumption });
     }

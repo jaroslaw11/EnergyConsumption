@@ -8,6 +8,7 @@ struct Observation {
     int timeOfDay;       // Encoded as 0 = morning, 1 = afternoon, 2 = evening, 3 = night
     int dayOfWeek;       // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
     double energyConsumption; // Energy consumption
+    Observation(double t, int tod, int dow, double ec) : temperature(t), timeOfDay(tod), dayOfWeek(dow), energyConsumption(ec) {}
 };
 
 class EnergyForecaster {
