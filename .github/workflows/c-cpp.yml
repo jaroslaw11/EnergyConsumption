@@ -35,13 +35,13 @@ jobs:
           # Replace 'MyApp' with your actual target name
           make EnergyConsumption
           # Create the .app bundle directory structure
-          mkdir -p MyApp.app/Contents/MacOS
-          cp MyApp MyApp.app/Contents/MacOS/
+          mkdir -p EnergyConsumption.app/Contents/MacOS
+          cp EnergyConsumption EnergyConsumption.app/Contents/MacOS/
           # Include additional resources (if any)
-          # cp -r ../resources MyApp.app/Contents/Resources
+          # cp -r ../resources EnergyConsumption.app/Contents/Resources
   
       - name: Upload .app bundle
         uses: actions/upload-artifact@v3
         with:
-          name: MyApp
-          path: build/MyApp.app
+          name: EnergyConsumption
+          path: build/EnergyConsumption.app
