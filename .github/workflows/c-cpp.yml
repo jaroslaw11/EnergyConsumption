@@ -8,40 +8,40 @@ jobs:
     runs-on: macos-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-
-    - name: Setup cmake
-      uses: jwlawson/actions-setup-cmake@v2
-      with:
-        cmake-version: '3.29.6'
-    - name: Use cmake
-      run: cmake --version
-
-    - name: Configure CMake
-      run: |
-        mkdir build
-        cd build
-        cmake ..
-
-    - name: Build project
-      run: |
-        cd build
-        cmake --build . --config Release
-
-    - name: Create .app bundle
-      run: |
-        cd build
-        # Replace 'MyApp' with your actual target name
-        make MyApp
-        # Create the .app bundle directory structure
-        mkdir -p MyApp.app/Contents/MacOS
-        cp MyApp MyApp.app/Contents/MacOS/
-        # Include additional resources (if any)
-        # cp -r ../resources MyApp.app/Contents/Resources
-
-    - name: Upload .app bundle
-      uses: actions/upload-artifact@v3
-      with:
-        name: MyApp
-        path: build/MyApp.app
+      - name: Checkout repository
+        uses: actions/checkout@v4
+  
+      - name: Setup cmake
+        uses: jwlawson/actions-setup-cmake@v2
+        with:
+          cmake-version: '3.29.6'
+      - name: Use cmake
+        run: cmake --version
+  
+      - name: Configure CMake
+        run: |
+          mkdir build
+          cd build
+          cmake ..
+  
+      - name: Build project
+        run: |
+          cd build
+          cmake --build . --config Release
+  
+      - name: Create .app bundle
+        run: |
+          cd build
+          # Replace 'MyApp' with your actual target name
+          make MyApp
+          # Create the .app bundle directory structure
+          mkdir -p MyApp.app/Contents/MacOS
+          cp MyApp MyApp.app/Contents/MacOS/
+          # Include additional resources (if any)
+          # cp -r ../resources MyApp.app/Contents/Resources
+  
+      - name: Upload .app bundle
+        uses: actions/upload-artifact@v3
+        with:
+          name: MyApp
+          path: build/MyApp.app
